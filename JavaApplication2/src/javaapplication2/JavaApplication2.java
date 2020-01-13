@@ -16,20 +16,49 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         
-        /*WektorRozwiazania wektor1 = new WektorRozwiazania(3);
-        WektorRozwiazania wektor2 = new WektorRozwiazania(10);
-        int[] test = {2,3,5,7};
-        WektorRozwiazania wektor3 = new WektorRozwiazania(test);*/
+        WektorRozwiazania wektor1 = new WektorRozwiazania(5);
+        //WektorRozwiazania wektor2 = new WektorRozwiazania(10);
+        
         WektorRozwiazania wektor4 = new WektorRozwiazania(10);
         wektor4.losujRozwiazanie();
-        
-        /*wektor1.wypiszRozwiazanie();
-        wektor2.wypiszRozwiazanie();
-        wektor3.wypiszRozwiazanie(); */
         wektor4.wypiszRozwiazanie();
         
-        int[][] macierz = new int[4][4];
-        MacierzOdleglosci mo = new MacierzOdleglosci(macierz);
-    }
-    
+        wektor1.wypiszRozwiazanie();
+        //wektor2.wypiszRozwiazanie();
+        //wektor3.wypiszRozwiazanie(); 
+        //wektor4.wypiszRozwiazanie();
+        
+        int[][] macierz = {{0,   341, 584, 486, 304},
+                           {341, 0,   299, 341, 304},
+                           {584, 299, 0,   304, 403},
+                           {486, 341, 304, 0,   280},
+                           {304, 304, 403, 280, 0}};
+        String[] miasta = {"Gdańsk","Warszawa","Kraków","Wrocław","Poznań"};
+        MacierzOdleglosci mo = new MacierzOdleglosci(macierz, miasta);
+        /*System.out.println(mo.wypiszTrase(wektor1));
+        System.out.println(mo.obliczTrase(wektor1));  
+        wektor1.losujRozwiazanie();
+        System.out.println(mo.wypiszTrase(wektor1));
+        System.out.println(mo.obliczTrase(wektor1));
+        wektor1.losujRozwiazanie();
+        System.out.println(mo.wypiszTrase(wektor1));
+        System.out.println(mo.obliczTrase(wektor1));
+        wektor1.losujRozwiazanie();
+        System.out.println(mo.wypiszTrase(wektor1));
+        System.out.println(mo.obliczTrase(wektor1));
+        wektor1.losujRozwiazanie();
+        System.out.println(mo.wypiszTrase(wektor1));
+        System.out.println(mo.obliczTrase(wektor1));*/
+        
+        System.out.println(mo.obliczTrase(wektor1));
+        WektorRozwiazania w1 = wektor1.mod2opt(2, 4);
+        w1.wypiszRozwiazanie();
+        System.out.println(mo.obliczTrase(w1));
+        WektorRozwiazania w2 = wektor1.mod2opt(0, 4);
+        w2.wypiszRozwiazanie();
+        System.out.println(mo.obliczTrase(w2));
+        WektorRozwiazania w3 = wektor1.mod2opt(0, 3);
+        w3.wypiszRozwiazanie();
+        System.out.println(mo.obliczTrase(w3));
+    }   
 }

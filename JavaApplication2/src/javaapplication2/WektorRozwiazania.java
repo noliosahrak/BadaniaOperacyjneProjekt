@@ -26,6 +26,14 @@ public class WektorRozwiazania {
         wektor = rozwiazanie;
     }
     
+    public int pobierzMiasto(int n) {
+        return wektor[n];
+    }
+    
+    public int dlugoscWektora() {
+        return wektor.length;
+    }
+    
     public void wypiszRozwiazanie() {
         for (int i = 0; i < wektor.length; i++) {
             System.out.print(wektor[i] + ", ");
@@ -37,6 +45,18 @@ public class WektorRozwiazania {
         for (int i = wektor.length - 1; i > 1 ; i--) {
             zamien(i,losuj.nextInt(i-1)+1);
         }
+    }
+    
+    public WektorRozwiazania mod2opt(int a, int b) {
+        int[] nowy = new int[wektor.length];
+        for (int i = 0; i < wektor.length; i++) {
+            if (i > a && i <= b) {
+                nowy[i] = wektor[a + 1 + b - i];
+            } else {
+                nowy[i] = wektor[i];
+            }
+        }
+        return new WektorRozwiazania(nowy);
     }
 
     private void zamien(int a, int b) {
