@@ -16,14 +16,17 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         
-        WektorRozwiazania wektor1 = new WektorRozwiazania(3);
+        /*WektorRozwiazania wektor1 = new WektorRozwiazania(3);
         WektorRozwiazania wektor2 = new WektorRozwiazania(10);
         int[] test = {2,3,5,7};
-        WektorRozwiazania wektor3 = new WektorRozwiazania(test);
+        WektorRozwiazania wektor3 = new WektorRozwiazania(test);*/
+        WektorRozwiazania wektor4 = new WektorRozwiazania(10);
+        wektor4.losujRozwiazanie();
         
-        wektor1.wypiszRozwiazanie();
+        /*wektor1.wypiszRozwiazanie();
         wektor2.wypiszRozwiazanie();
-        wektor3.wypiszRozwiazanie();    
+        wektor3.wypiszRozwiazanie(); */
+        wektor4.wypiszRozwiazanie();
     }
     
 }
