@@ -27,6 +27,9 @@ public class JavaApplication2 {
         wektor2.wypiszRozwiazanie();
         wektor3.wypiszRozwiazanie(); */
         wektor4.wypiszRozwiazanie();
+        
+        int[][] macierz = new int[4][4];
+        MacierzOdleglosci mo = new MacierzOdleglosci(macierz);
     }
     
 }
