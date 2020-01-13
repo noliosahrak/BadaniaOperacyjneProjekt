@@ -15,7 +15,15 @@ public class JavaApplication2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        WektorRozwiazania wektor1 = new WektorRozwiazania(3);
+        WektorRozwiazania wektor2 = new WektorRozwiazania(10);
+        int[] test = {2,3,5,7};
+        WektorRozwiazania wektor3 = new WektorRozwiazania(test);
+        
+        wektor1.wypiszRozwiazanie();
+        wektor2.wypiszRozwiazanie();
+        wektor3.wypiszRozwiazanie();    
     }
     
 }
