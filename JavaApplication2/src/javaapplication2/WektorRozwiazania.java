@@ -5,12 +5,15 @@
  */
 package javaapplication2;
 
+import java.util.Random;
+
 /**
  *
  * @author Patrycja
  */
 public class WektorRozwiazania {
     private int[] wektor;
+    Random losuj = new Random();
     
     public WektorRozwiazania(int wymiar) {
         wektor = new int[wymiar];
@@ -28,5 +31,19 @@ public class WektorRozwiazania {
             System.out.print(wektor[i] + ", ");
         }
         System.out.println();
+    }
+    
+    public void losujRozwiazanie() {
+        for (int i = wektor.length - 1; i > 1 ; i--) {
+            zamien(i,losuj.nextInt(i-1)+1);
+        }
+    }
+
+    private void zamien(int a, int b) {
+        if (a != b) {
+            int tymczasowy = wektor[a];
+            wektor[a] = wektor[b];
+            wektor[b] = tymczasowy;
+        }
     }
 }
