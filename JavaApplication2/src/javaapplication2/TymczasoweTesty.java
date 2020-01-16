@@ -15,11 +15,11 @@ public class TymczasoweTesty {
         WektorRozwiazania wektor1 = new WektorRozwiazania(5);
         //WektorRozwiazania wektor2 = new WektorRozwiazania(10);
         
-        WektorRozwiazania wektor4 = new WektorRozwiazania(10);
-        wektor4.losujRozwiazanie();
-        wektor4.wypiszRozwiazanie();
+        //WektorRozwiazania wektor4 = new WektorRozwiazania(10);
+        //wektor4.losujRozwiazanie();
+        //wektor4.wypiszRozwiazanie();
         
-        wektor1.wypiszRozwiazanie();
+        //wektor1.wypiszRozwiazanie();
         //wektor2.wypiszRozwiazanie();
         //wektor3.wypiszRozwiazanie(); 
         //wektor4.wypiszRozwiazanie();
@@ -46,16 +46,27 @@ public class TymczasoweTesty {
         System.out.println(mo.wypiszTrase(wektor1));
         System.out.println(mo.obliczTrase(wektor1));*/
         
-        System.out.println(mo.obliczTrase(wektor1));
-        WektorRozwiazania w1 = wektor1.mod2opt(2, 4);
-        w1.wypiszRozwiazanie();
-        System.out.println(mo.obliczTrase(w1));
-        WektorRozwiazania w2 = wektor1.mod2opt(0, 4);
-        w2.wypiszRozwiazanie();
-        System.out.println(mo.obliczTrase(w2));
+        //System.out.println(mo.obliczTrase(wektor1));
+        //WektorRozwiazania w1 = wektor1.mod2opt(2, 4);
+        //w1.wypiszRozwiazanie();
+        //System.out.println(mo.obliczTrase(w1));
+        //WektorRozwiazania w2 = wektor1.mod2opt(0, 4);
+        //w2.wypiszRozwiazanie();
+        //System.out.println(mo.obliczTrase(w2));
         WektorRozwiazania w3 = wektor1.mod2opt(0, 3);
+        w3.losujRozwiazanie();
+        System.out.println(mo.wypiszTrase(w3));
         w3.wypiszRozwiazanie();
         System.out.println(mo.obliczTrase(w3));
-        System.out.println(mo.wypiszTrase(w3));
+        
+        WektorRozwiazania w5 = Algorytmy.optymalizacja2opt(mo, w3);
+        System.out.println(mo.wypiszTrase(w5));
+        w5.wypiszRozwiazanie();
+        System.out.println(mo.obliczTrase(w5));
+        
+        WektorRozwiazania w4 = Algorytmy.minimumLokalane2opt(mo, w3);
+        System.out.println(mo.wypiszTrase(w4));
+        w4.wypiszRozwiazanie();
+        System.out.println(mo.obliczTrase(w4)); 
     }
 }
