@@ -56,4 +56,8 @@ public class MacierzOdleglosci {
         }
         return trasa;
     }
+    
+    public int wymiarMacierzy() {
+        return macierz.length;
+    }
 }
