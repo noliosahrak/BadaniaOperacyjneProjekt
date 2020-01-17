@@ -1,0 +1,49 @@
+1.Bia³a Podlaska 
+2.Bia³ystok 
+3.Bielsko-Bia³a 
+4.Bydgoszcz <- in progres
+5.Che³m
+6.Ciechanów
+7.Czêstochowa
+8.Elbl¹g
+9.Gdañsk
+10.Gorzów Wielkopolski
+11.Jelenia Góra
+12.Kalisz
+13.Katowice
+14.Kielce
+15.Konin
+16.Koszalin
+17.Kraków
+18.Krosno
+19.Legnica
+20.Leszno
+21.Lublin
+22.£om¿a
+23.£ódŸ
+24.Nowy S¹cz
+25.Olsztyn
+26.Opole
+27.Ostro³êka
+28.Pi³a
+29.Piotrków Trybunalski
+30.P³ock
+31.Poznañ
+32.Przemyœl
+33.Radom
+34.Rzeszów
+35.Siedlce
+36.Sieradz
+37.Skierniewice
+38.S³upsk
+39.Suwa³ki
+40.Szczecin
+41.Tarnobrzeg
+42.Tarnów
+43.Toruñ
+44Wa³brzych
+45.Warszawa
+46.Wroc³awek
+47.Wroc³aw
+48.Zamoœæ
+49.Zielona Góra
