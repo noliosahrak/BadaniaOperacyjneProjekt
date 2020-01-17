@@ -1,0 +1,16 @@
+1.Wygenerownaie populacji - Ok +(Generowanie populacji o określonej liczbeności)
+2.Sprawdzenie jakości - Ok
+3.Krzyżowanie - do zrobienia
+4.Mutacje - Ok
+5.Optymalizacja lokalna - Ok
+6.Sprawdzenie jakości - Ok
+7.Selekcja - do zrobienia
+8.If (warunek stopu) {idź dalej} else {idź do 3}
+9.Wybranie najlepszego z populacji - do zrobienia (metoda Populacji)
+10.Optymalizacja lokalna najlepszego do momentu osiągnięcia minimum lokalnego - Ok
+11.Zwrócenie najlepszego rozwiązania - Ok +(metoda Populacji)
+
+Do zrobienia:
+-Klasa Populacja
+-Algorytm całość i krok po kroku
+-Interfejs graficzny
