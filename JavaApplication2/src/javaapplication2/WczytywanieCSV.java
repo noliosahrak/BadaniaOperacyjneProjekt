@@ -22,6 +22,7 @@ public class WczytywanieCSV {
         String[] miasta;
         int[][] macierz = null;
         Path sciezkaDoPliku = Paths.get(nazwaPliku);
+        boolean poprawneDane = true;
 
         try (BufferedReader br1 = Files.newBufferedReader(sciezkaDoPliku, StandardCharsets.ISO_8859_1)) {
             int wymiarMacierzy = (int) (br1.lines().count() - 1);
@@ -33,18 +34,20 @@ public class WczytywanieCSV {
         try (BufferedReader br2 = Files.newBufferedReader(sciezkaDoPliku, StandardCharsets.ISO_8859_1)) {
             String linia = br2.readLine();
             miasta = linia.split(",");
+            if (miasta.length != macierz.length) poprawneDane = false;
 
             linia = br2.readLine();
             int wiersz = 0;
             while (linia != null) { 
                 String[] wartosc = linia.split(",");
+                if (wartosc.length != miasta.length) poprawneDane = false;
                 for (int i = 0; i < wartosc.length; i++) {
                     macierz[wiersz][i] = Integer.parseInt(wartosc[i]);
                 }
                 linia = br2.readLine();
                 wiersz++;
             }
-            return new MacierzOdleglosci(macierz,miasta);
+            return new MacierzOdleglosci(macierz,miasta,poprawneDane);
             
         } catch (IOException ioe) {
             ioe.printStackTrace();

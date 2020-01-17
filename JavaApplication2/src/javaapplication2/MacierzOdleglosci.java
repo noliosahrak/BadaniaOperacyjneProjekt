@@ -12,6 +12,7 @@ package javaapplication2;
 public class MacierzOdleglosci {
     private int[][] macierz;
     private String[] miasta;
+    private boolean poprawneDane;
     
     public MacierzOdleglosci(int wymiar) {
         macierz = new int[wymiar][wymiar];
@@ -25,10 +26,11 @@ public class MacierzOdleglosci {
         }
     }
 
-    MacierzOdleglosci(int[][] macierz, String[] miasta) {
+    MacierzOdleglosci(int[][] macierz, String[] miasta, boolean poprawneDane) {
         if (macierz.length == macierz[0].length && macierz.length == miasta.length) {
             this.macierz = macierz;
             this.miasta = miasta;
+            this.poprawneDane = poprawneDane;
         }
     }
     
@@ -59,5 +61,9 @@ public class MacierzOdleglosci {
     
     public int wymiarMacierzy() {
         return macierz.length;
+    }
+    
+    public boolean sprawdzPoprawnoscDanych() {
+        return poprawneDane;
     }
 }
