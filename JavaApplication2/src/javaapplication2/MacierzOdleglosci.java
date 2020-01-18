@@ -66,4 +66,18 @@ public class MacierzOdleglosci {
     public boolean sprawdzPoprawnoscDanych() {
         return poprawneDane;
     }
+    
+    public boolean sprawdzSymetrieMacierzy() {
+        boolean symetria = true;
+        for (int i = 0; i < macierz.length - 1; i++) {
+            for (int j = i + 1; j < macierz.length; j++) {
+                if (macierz[i][j] != macierz[j][i]) {
+                    symetria = false;
+                    System.out.println(miasta[i] + " " + miasta[j]);
+                }
+            }
+        }
+        if (symetria) System.out.println("Macierz jest symetryczna");
+        return symetria;
+    }
 }

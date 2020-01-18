@@ -34,7 +34,8 @@ public class Kontroller {
             javaapplication2.JavaApplication2.macierz = WczytywanieCSV.wczytajMacierzOdleglosciCSV(sciezkaDoPliku);
             if (javaapplication2.JavaApplication2.macierz.sprawdzPoprawnoscDanych()) {
                 javaapplication2.JavaApplication2.wczytanoPoprawnie = true;
-                TymczasoweTesty.testy();
+                javaapplication2.JavaApplication2.macierz.sprawdzSymetrieMacierzy();
+                //TymczasoweTesty.testy();
             } else {
                 javaapplication2.JavaApplication2.wczytanoPoprawnie = false;
                 alertZlyFormatDanych();

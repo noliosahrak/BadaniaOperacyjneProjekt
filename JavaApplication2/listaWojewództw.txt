@@ -1,16 +1,16 @@
 1.Bia³a Podlaska 
 2.Bia³ystok 
 3.Bielsko-Bia³a 
-4.Bydgoszcz <- in progres
-5.Che³m
-6.Ciechanów
-7.Czêstochowa
-8.Elbl¹g
-9.Gdañsk
-10.Gorzów Wielkopolski
-11.Jelenia Góra
+4.Bydgoszcz 
+5.Che³m 
+6.Ciechanów 
+7.Czêstochowa 
+8.Elbl¹g 
+9.Gdañsk 
+10.Gorzów Wielkopolski 
+11.Jelenia Góra 
 12.Kalisz
-13.Katowice
+13.Katowice 
 14.Kielce
 15.Konin
 16.Koszalin
