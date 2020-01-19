@@ -84,6 +84,11 @@ public class Populacja {
     }
 
     int sredniaWartosc() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int srednia = 0;
+        for (WektorRozwiazania w : wektory) {
+            srednia += w.pobierzDlugoscTrasy();
+        }
+        srednia /= wektory.size();
+        return srednia;
     }
 }
