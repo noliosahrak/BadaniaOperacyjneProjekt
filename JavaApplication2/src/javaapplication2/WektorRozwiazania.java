@@ -61,7 +61,7 @@ public class WektorRozwiazania implements Comparable<WektorRozwiazania>{
         return new WektorRozwiazania(nowy);
     }
 
-    private void zamien(int a, int b) {
+    public void zamien(int a, int b) {
         if (a != b) {
             int tymczasowy = wektor[a];
             wektor[a] = wektor[b];
@@ -82,5 +82,31 @@ public class WektorRozwiazania implements Comparable<WektorRozwiazania>{
     public int compareTo(WektorRozwiazania wektorPorownywany) {
         int porownanaTrasa = ((WektorRozwiazania)wektorPorownywany).pobierzDlugoscTrasy();
         return this.trasa - porownanaTrasa;
+    }
+
+    WektorRozwiazania krzyzuj(WektorRozwiazania drugi) {
+        int[] nowy = new int[wektor.length];
+        for (int i : nowy) {
+            i = 0;
+        }
+        for (int i = 0; i < (wektor.length + 1) / 2; i++) {
+            nowy[i] = wektor[i];
+        }
+        int i = (wektor.length + 1) / 2; 
+        for (int j = 0; j < wektor.length; j++) {
+            if (!sprawdzenieWystapienia(nowy,drugi.wektor[j])) {
+                nowy[i] = drugi.wektor[j];
+                i++;
+                if (i == wektor.length) j = wektor.length;
+            }
+        }
+        return new WektorRozwiazania(nowy);
+    }
+
+    private boolean sprawdzenieWystapienia(int[] nowy, int i) {
+        for (int j = 0; j < nowy.length; j++) {
+            if (nowy[j] == i) return true;
+        }
+        return false;
     }
 }

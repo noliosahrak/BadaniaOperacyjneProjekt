@@ -7,6 +7,7 @@ package javaapplication2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Random;
 
 /**
  *
@@ -71,12 +72,28 @@ public class Populacja {
         wektory = noweWektory;
     }
 
-    void krzyzowanie(int liczebnoscPopulacji) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    void krzyzowanie(int liczbaKrzyzowan) {
+        TabelaSzans tabelaSzans = new TabelaSzans(wektory);
+        for (int i = 0; i < liczbaKrzyzowan; i++) {
+            int[] para = tabelaSzans.losujPare();
+            WektorRozwiazania nowyWektor = wektory.get(para[0]).krzyzuj(wektory.get(para[1]));
+            nowyWektor.ObliczDlugoscTrasy(macierz);
+            wektory.add(nowyWektor);
+        }
     }
 
     void mutuj(int szansaMutacji) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int liczbaMutacji = szansaMutacji * wektory.size() / 1000;
+        Random losuj = new Random();
+        for (int i = 0; i < liczbaMutacji; i++) {
+            int w = losuj.nextInt(wektory.size());
+            int a = losuj.nextInt(wektory.get(0).dlugoscWektora());
+            int b = losuj.nextInt(wektory.get(0).dlugoscWektora());
+            WektorRozwiazania nowy = wektory.get(w);
+            nowy.zamien(a, b);
+            nowy.ObliczDlugoscTrasy(macierz);
+            wektory.set(w, nowy);
+        }
     }
 
     int wezNajlepszyWynik() {
