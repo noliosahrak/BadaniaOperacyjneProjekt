@@ -41,4 +41,46 @@ public class Algorytmy {
         return minimum;
     }
     
+    public void AlgorytmGenetyczny(MacierzOdleglosci macierz, int liczebnoscPopulacji, 
+            int szansaMutacji, boolean warunekStopu, int liczbaIteracji) {
+        int licznikIteracji = 0;
+        int najlepszyWynik;
+        int srednia;
+        //Utworzenie populacji
+        Populacja populacja = new Populacja(liczebnoscPopulacji, macierz);
+        populacja.losujPopulacje();
+        //Ocena jakości
+        populacja.sortujPopulacje();
+        do {
+            srednia = populacja.sredniaWartosc();
+            najlepszyWynik = populacja.wezNajlepszyWynik();
+            //Krzyżowanie i mutacje
+            populacja.krzyzowanie(liczebnoscPopulacji);
+            populacja.mutuj(szansaMutacji);
+            //Lokalna optymalizacja
+            populacja.lokalnaOptymalizacja();
+            //Ocena jakości
+            populacja.sortujPopulacje();
+            //Selekcja
+            populacja.selekcja(liczebnoscPopulacji);
+            licznikIteracji++;
+        } 
+        //Warunek stopu
+        while (!sprawdzWarunekStopu(warunekStopu,licznikIteracji,liczbaIteracji,srednia,najlepszyWynik,populacja));
+        //Podanie wyniku
+        populacja.szukanieMinLokalnych();
+        populacja.selekcja(1);
+        populacja.wypiszPopulacje();
+    }
+
+    private boolean sprawdzWarunekStopu(boolean warunekStopu, int licznikIteracji, int liczbaIteracji, int srednia, int najlepszyWynik, Populacja populacja) {
+        if (warunekStopu) {
+            if (licznikIteracji < liczbaIteracji) return false;
+            else return true;
+        } else {
+            if (populacja.sredniaWartosc() < srednia || populacja.wezNajlepszyWynik() < najlepszyWynik) return false;
+            else return true;
+        }
+    }
+    
 }

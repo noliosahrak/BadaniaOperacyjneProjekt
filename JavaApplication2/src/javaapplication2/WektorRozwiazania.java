@@ -11,9 +11,10 @@ import java.util.Random;
  *
  * @author Patrycja
  */
-public class WektorRozwiazania {
+public class WektorRozwiazania implements Comparable<WektorRozwiazania>{
     private int[] wektor;
-    Random losuj = new Random();
+    private Random losuj = new Random();
+    private int trasa = 0;
     
     public WektorRozwiazania(int wymiar) {
         wektor = new int[wymiar];
@@ -38,6 +39,7 @@ public class WektorRozwiazania {
         for (int i = 0; i < wektor.length; i++) {
             System.out.print(wektor[i] + ", ");
         }
+        if (trasa != 0) System.out.print("długość trasy = "+trasa);
         System.out.println();
     }
     
@@ -65,5 +67,20 @@ public class WektorRozwiazania {
             wektor[a] = wektor[b];
             wektor[b] = tymczasowy;
         }
+    }
+    
+    public int ObliczDlugoscTrasy(MacierzOdleglosci macierz) {
+        trasa = macierz.obliczTrase(this);
+        return trasa;
+    }
+    
+    public int pobierzDlugoscTrasy() {
+        return trasa;
+    }
+
+    @Override
+    public int compareTo(WektorRozwiazania wektorPorownywany) {
+        int porownanaTrasa = ((WektorRozwiazania)wektorPorownywany).pobierzDlugoscTrasy();
+        return this.trasa - porownanaTrasa;
     }
 }
