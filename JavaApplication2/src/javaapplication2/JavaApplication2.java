@@ -19,7 +19,6 @@ public class JavaApplication2 extends Application{
     
     public static Stage stage;
     public static boolean wczytanoPoprawnie = false;
-    public static MacierzOdleglosci macierz;
 
     /**
      * @param args the command line arguments
@@ -38,6 +37,6 @@ public class JavaApplication2 extends Application{
         stage = primaryStage;
         stage.setScene(scene);
         stage.setTitle("Start");
-        stage.show();        
+        stage.show(); 
     }
 }

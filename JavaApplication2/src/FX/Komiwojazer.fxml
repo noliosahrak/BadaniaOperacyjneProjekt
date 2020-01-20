@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
@@ -8,7 +13,59 @@
    <children>
       <Pane prefHeight="407.0" prefWidth="600.0">
          <children>
-            <Button layoutX="46.0" layoutY="39.0" mnemonicParsing="false" onAction="#wczytajCSV" text="Wczytaj Macierz Odległości z Pliku" />
+            <TabPane prefHeight="407.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+               <tabs>
+                  <Tab text="Wczytywanie">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="41.0" layoutY="42.0" mnemonicParsing="false" onAction="#wczytajCSV" text="Wczytaj Macierz Odległości" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabAlGen" text="Algorytm genetyczny">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabLokOpt" text="Lokalna Optymalizacja">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="LOliczebnosc" layoutX="422.0" layoutY="40.0" />
+                              <Label layoutX="442.0" layoutY="14.0" text="Liczebnośc Populacji" />
+                              <Label layoutX="23.0" layoutY="348.0" text="Czas obliczeń:" />
+                              <Label fx:id="LOczas" layoutX="112.0" layoutY="348.0" text="---" />
+                              <TextArea fx:id="LOpopulacjaStartowa" layoutX="18.0" layoutY="25.0" prefHeight="142.0" prefWidth="392.0" />
+                              <TextArea fx:id="LOminima" layoutX="19.0" layoutY="189.0" prefHeight="155.0" prefWidth="393.0" />
+                              <Label layoutX="19.0" layoutY="6.0" text="Populacja startowa" />
+                              <Label layoutX="19.0" layoutY="172.0" text="Minima lokalne" />
+                              <Button layoutX="440.0" layoutY="71.0" mnemonicParsing="false" onAction="#lokalnaOptymalizacja" text="Wykonaj algorytm" />
+                              <Label layoutX="416.0" layoutY="105.0" text="Metoda 2-opt umożliwia ulepsze-" />
+                              <Label layoutX="416.0" layoutY="120.0" text="nie już istniejącego rozwiązania." />
+                              <Label layoutX="416.0" layoutY="135.0" text="Polega ona na usunięciu dwóch " />
+                              <Label layoutX="416.0" layoutY="150.0" text="krawędzi ze ścieżki i podłączeniu " />
+                              <Label layoutX="416.0" layoutY="165.0" text="otrzymanego urywka trasy &quot;na" />
+                              <Label layoutX="416.0" layoutY="180.0" text="odwrót&quot; czyli odwiedzeniu tych" />
+                              <Label layoutX="416.0" layoutY="195.0" text="miast w odwrotnej kolejności." />
+                              <Label layoutX="416.0" layoutY="210.0" text="Graficznie może to przypominać" />
+                              <Label layoutX="416.0" layoutY="225.0" text="&quot;rozplątywanie&quot; trasy." />
+                              <Label layoutX="416.0" layoutY="255.0" text="W pojedyńczej iteracji sprawdza" />
+                              <Label layoutX="416.0" layoutY="270.0" text="się &quot;rozplątanie&quot; których dwóch" />
+                              <Label layoutX="416.0" layoutY="285.0" text="krawędzi najbardziej skróci trasę." />
+                              <Label layoutX="416.0" layoutY="300.0" text="Iteracje powtarzamy do momentu" />
+                              <Label layoutX="416.0" layoutY="315.0" text="gdy nie uzyskujemy już lepszych" />
+                              <Label layoutX="416.0" layoutY="330.0" text="wyników czyli do osiągnięcia " />
+                              <Label layoutX="416.0" layoutY="345.0" text="minimum lokalnego." />
+                              <Label layoutX="216.0" layoutY="348.0" text="Długość najlepszej trasy:" />
+                              <Label fx:id="LOwynik" layoutX="358.0" layoutY="348.0" text="---" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
          </children>
       </Pane>
    </children>

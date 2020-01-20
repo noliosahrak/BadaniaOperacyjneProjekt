@@ -18,12 +18,11 @@ class TabelaSzans {
 
     TabelaSzans(ArrayList<WektorRozwiazania> wektory) {
         tabelaSzans = new ArrayList<>();
-        int najgorszaTrasa = wektory.get(wektory.size() - 1).pobierzDlugoscTrasy();
+        double najgorszaTrasa = (double) wektory.get(wektory.size() - 1).pobierzDlugoscTrasy();
         for (WektorRozwiazania w : wektory) {
             int indeks = wektory.indexOf(w);
-            int dlugosc = w.pobierzDlugoscTrasy();
-            int szansa = (najgorszaTrasa * najgorszaTrasa * najgorszaTrasa * najgorszaTrasa) / 
-                    (dlugosc * dlugosc * dlugosc * dlugosc);
+            double dlugosc = (double) w.pobierzDlugoscTrasy();
+            double szansa = Math.pow(najgorszaTrasa / dlugosc, 4);
             for (int j = 0; j < szansa; j++) {
                 tabelaSzans.add(indeks);
             }

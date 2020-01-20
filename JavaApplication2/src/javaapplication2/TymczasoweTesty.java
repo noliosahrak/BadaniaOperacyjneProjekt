@@ -5,6 +5,8 @@
  */
 package javaapplication2;
 
+import FX.Kontroller;
+
 /**
  *
  * @author Patrycja
@@ -30,7 +32,7 @@ public class TymczasoweTesty {
                            {486, 341, 304, 0,   280},
                            {304, 304, 403, 280, 0}};
         String[] miasta = {"Gdańsk","Warszawa","Kraków","Wrocław","Poznań"};*/
-        MacierzOdleglosci mo = javaapplication2.JavaApplication2.macierz;
+        MacierzOdleglosci mo = Kontroller.macierz;
         if (mo.sprawdzPoprawnoscDanych()) {
             
             WektorRozwiazania w3 = new WektorRozwiazania(mo.wymiarMacierzy());

@@ -42,6 +42,15 @@ public class Populacja {
             w.wypiszRozwiazanie();
         }
     }
+    
+    public String zawartoscPopulacji() {
+        String zawartosc = "";
+        for (WektorRozwiazania w : wektory) {
+            zawartosc += macierz.wypiszTrase(w);
+            zawartosc += "\n" + w.pobierzDlugoscTrasy() + "\n";
+        }
+        return zawartosc;
+    }
     /**
      * Wczesniej należy posortować populację
      * @param liczebnosc Tyle osobników zostanie w populacji
@@ -96,7 +105,7 @@ public class Populacja {
         }
     }
 
-    int wezNajlepszyWynik() {
+    public int wezNajlepszyWynik() {
         return wektory.get(0).pobierzDlugoscTrasy();
     }
 
