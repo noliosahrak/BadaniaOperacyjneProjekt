@@ -81,7 +81,7 @@ public class Populacja {
         wektory = noweWektory;
     }
 
-    void krzyzowanie(int liczbaKrzyzowan) {
+    public void krzyzowanie(int liczbaKrzyzowan) {
         TabelaSzans tabelaSzans = new TabelaSzans(wektory);
         for (int i = 0; i < liczbaKrzyzowan; i++) {
             int[] para = tabelaSzans.losujPare();
@@ -91,7 +91,7 @@ public class Populacja {
         }
     }
 
-    void mutuj(int szansaMutacji) {
+    public void mutuj(int szansaMutacji) {
         int liczbaMutacji = szansaMutacji * wektory.size() / 1000;
         Random losuj = new Random();
         for (int i = 0; i < liczbaMutacji; i++) {
@@ -109,7 +109,7 @@ public class Populacja {
         return wektory.get(0).pobierzDlugoscTrasy();
     }
 
-    int sredniaWartosc() {
+    public int sredniaWartosc() {
         int srednia = 0;
         for (WektorRozwiazania w : wektory) {
             srednia += w.pobierzDlugoscTrasy();

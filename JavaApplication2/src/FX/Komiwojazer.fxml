@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -26,7 +27,37 @@
                   </Tab>
                   <Tab fx:id="tabAlGen" text="Algorytm genetyczny">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="432.0" layoutY="321.0" mnemonicParsing="false" onAction="#algorytmGenetyczny" text="Uruchom algorytm" />
+                              <TextArea fx:id="AGpopulacja" layoutX="14.0" layoutY="20.0" prefHeight="194.0" prefWidth="395.0" />
+                              <Label fx:id="AGlicznikIteracji" layoutX="24.0" text="Populacja po 0 iteracji" />
+                              <Button layoutX="71.0" layoutY="227.0" mnemonicParsing="false" onAction="#AGpokazPoprzedni" text="Poprzednia Iteracja" />
+                              <Button layoutX="246.0" layoutY="227.0" mnemonicParsing="false" onAction="#AGpokazNastepny" text="Następna Iteracja" />
+                              <Label layoutX="24.0" layoutY="356.0" text="Czas obliczeń:" />
+                              <Label fx:id="AGczas" layoutX="122.0" layoutY="356.0" text="---" />
+                              <TextArea fx:id="AGnajlepszy" layoutX="12.0" layoutY="281.0" prefHeight="65.0" prefWidth="389.0" />
+                              <Label layoutX="29.0" layoutY="259.0" text="Najlepszy wynik" />
+                              <Label fx:id="AGlicznikDynamiczny" layoutX="192.0" layoutY="356.0" text="Wykonano 0 iteracji" />
+                              <Label layoutX="427.0" text="Liczebność populacji" />
+                              <TextField fx:id="AGliczebnosc" layoutX="416.0" layoutY="15.0" />
+                              <TextField fx:id="AGmutacja" layoutX="416.0" layoutY="55.0" />
+                              <Label layoutX="442.0" layoutY="40.0" text="Szansa mutacji" />
+                              <Label layoutX="565.0" layoutY="60.0" text="/1000" />
+                              <Label layoutX="441.0" layoutY="80.0" text="Warunek stopu" />
+                              <ChoiceBox fx:id="AGwarunek" layoutX="416.0" layoutY="95.0" prefWidth="150.0" />
+                              <Label layoutX="453.0" layoutY="120.0" text="Liczba iteracji*" />
+                              <TextField fx:id="AGliczbaIteracjiWarunek" layoutX="417.0" layoutY="135.0" />
+                              <Label layoutX="415.0" layoutY="160.0" text="*Tylko po wybraniu 1 warunku" />
+                              <Label layoutX="415.0" layoutY="175.0" text="stopu - Liczba iteracji" />
+                              <Label layoutX="415.0" layoutY="205.0" text="2 warunek stopu sprawdza czy w" />
+                              <Label layoutX="415.0" layoutY="220.0" text="nowej populacji jest otrzymano " />
+                              <Label layoutX="415.0" layoutY="235.0" text="wynik lepszy od najlepszego z " />
+                              <Label layoutX="415.0" layoutY="250.0" text="poprzedniej oraz czy średnia " />
+                              <Label layoutX="415.0" layoutY="265.0" text="wartość jest mniejsza." />
+                              <Label layoutX="415.0" layoutY="280.0" text="Algorytm kończy się jeśli nie" />
+                              <Label layoutX="415.0" layoutY="295.0" text="spełnione są obydwa warunki" />
+                           </children></AnchorPane>
                     </content>
                   </Tab>
                   <Tab fx:id="tabLokOpt" text="Lokalna Optymalizacja">
