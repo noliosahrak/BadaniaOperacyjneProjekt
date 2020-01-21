@@ -51,6 +51,12 @@ public class Populacja {
         }
         return zawartosc;
     }
+    
+    public String wypiszNajlepszaTrase() {
+        String wypisz = macierz.wypiszTrase(wektory.get(0));
+        wypisz += "\n" + wektory.get(0).pobierzDlugoscTrasy() + "\n";
+        return wypisz;
+    }
     /**
      * Wczesniej należy posortować populację
      * @param liczebnosc Tyle osobników zostanie w populacji
@@ -96,8 +102,8 @@ public class Populacja {
         Random losuj = new Random();
         for (int i = 0; i < liczbaMutacji; i++) {
             int w = losuj.nextInt(wektory.size());
-            int a = losuj.nextInt(wektory.get(0).dlugoscWektora());
-            int b = losuj.nextInt(wektory.get(0).dlugoscWektora());
+            int a = losuj.nextInt(wektory.get(0).dlugoscWektora() - 1) + 1;
+            int b = losuj.nextInt(wektory.get(0).dlugoscWektora() - 1) + 1;
             WektorRozwiazania nowy = wektory.get(w);
             nowy.zamien(a, b);
             nowy.ObliczDlugoscTrasy(macierz);

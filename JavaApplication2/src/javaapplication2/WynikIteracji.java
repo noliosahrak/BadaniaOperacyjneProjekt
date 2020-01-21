@@ -14,12 +14,14 @@ public class WynikIteracji {
     private final int najlepszyWynik;
     private final int srednia;
     private final String trasy;
+    private final String najlepszaTrasa;
 
     public WynikIteracji(Populacja populacja, int numerIteracji) {
         this.numerIteracji = numerIteracji;
         najlepszyWynik = populacja.wezNajlepszyWynik();
         srednia = populacja.sredniaWartosc();
         trasy = populacja.zawartoscPopulacji();
+        najlepszaTrasa = populacja.wypiszNajlepszaTrase();
     }
     
     public int getNumerIteracji() {
@@ -36,5 +38,9 @@ public class WynikIteracji {
     
     public String getTrasy() {
         return trasy;
+    }
+    
+    public String getNajlepszaTrase() {
+        return najlepszaTrasa;
     }
 }

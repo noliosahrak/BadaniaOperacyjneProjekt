@@ -113,7 +113,10 @@ public class Kontroller implements Initializable{
             int szansaMutacji = Integer.parseInt(AGmutacja.getText());
             wskaznikIteracji = 0;
             String warunekStopu = (String) AGwarunek.getValue();
-            int maxLiczbaIteracji = Integer.parseInt(AGliczbaIteracjiWarunek.getText());
+            int maxLiczbaIteracji = 0;
+            if (warunekStopu.equals("Liczba iteracji")) {
+                maxLiczbaIteracji = Integer.parseInt(AGliczbaIteracjiWarunek.getText());
+            }
             long start = System.currentTimeMillis();
             int najlepszyWynik;
             //Utworzenie populacji
@@ -269,8 +272,8 @@ public class Kontroller implements Initializable{
     }
 
     private void pokazNajlepszyWynik(int numerIteracji) {
-        String wyswietl = "Najlepszy wynik do tej pory znaleziono po " + numerIteracji + " iteracji";
-        wyswietl = wyswietl + "\n" + listaWynikow.get(numerIteracji).getTrasy();
+        String wyswietl = "Najlepszy wynik znaleziono po " + numerIteracji + " iteracji";
+        wyswietl = wyswietl + "\n" + listaWynikow.get(numerIteracji).getNajlepszaTrase();
         AGnajlepszy.setText(wyswietl);
     }
 }

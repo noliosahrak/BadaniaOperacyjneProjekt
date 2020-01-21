@@ -21,6 +21,7 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <Button layoutX="41.0" layoutY="42.0" mnemonicParsing="false" onAction="#wczytajCSV" text="Wczytaj Macierz Odległości" />
+                              <Label layoutX="211.0" layoutY="181.0" text="&lt;&lt;Tutaj wstawić podgląd macierzy&gt;&gt;" />
                            </children>
                         </AnchorPane>
                     </content>
@@ -32,13 +33,12 @@
                               <Button layoutX="432.0" layoutY="321.0" mnemonicParsing="false" onAction="#algorytmGenetyczny" text="Uruchom algorytm" />
                               <TextArea fx:id="AGpopulacja" layoutX="14.0" layoutY="20.0" prefHeight="194.0" prefWidth="395.0" />
                               <Label fx:id="AGlicznikIteracji" layoutX="24.0" text="Populacja po 0 iteracji" />
-                              <Button layoutX="71.0" layoutY="227.0" mnemonicParsing="false" onAction="#AGpokazPoprzedni" text="Poprzednia Iteracja" />
-                              <Button layoutX="246.0" layoutY="227.0" mnemonicParsing="false" onAction="#AGpokazNastepny" text="Następna Iteracja" />
+                              <Button layoutX="71.0" layoutY="220.0" mnemonicParsing="false" onAction="#AGpokazPoprzedni" text="Poprzednia Iteracja" />
+                              <Button layoutX="246.0" layoutY="220.0" mnemonicParsing="false" onAction="#AGpokazNastepny" text="Następna Iteracja" />
                               <Label layoutX="24.0" layoutY="356.0" text="Czas obliczeń:" />
                               <Label fx:id="AGczas" layoutX="122.0" layoutY="356.0" text="---" />
-                              <TextArea fx:id="AGnajlepszy" layoutX="12.0" layoutY="281.0" prefHeight="65.0" prefWidth="389.0" />
-                              <Label layoutX="29.0" layoutY="259.0" text="Najlepszy wynik" />
-                              <Label fx:id="AGlicznikDynamiczny" layoutX="192.0" layoutY="356.0" text="Wykonano 0 iteracji" />
+                              <TextArea fx:id="AGnajlepszy" layoutX="12.0" layoutY="254.0" prefHeight="101.0" prefWidth="389.0" />
+                              <Label fx:id="AGlicznikDynamiczny" layoutX="296.0" layoutY="356.0" text="Wykonano 0 iteracji" />
                               <Label layoutX="427.0" text="Liczebność populacji" />
                               <TextField fx:id="AGliczebnosc" layoutX="416.0" layoutY="15.0" />
                               <TextField fx:id="AGmutacja" layoutX="416.0" layoutY="55.0" />
