@@ -20,6 +20,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
@@ -66,6 +67,9 @@ public class Kontroller implements Initializable{
     
     @FXML
     private TextField AGliczebnosc;
+    
+    @FXML
+    private CheckBox AGhybrydowy;
 
     @FXML
     private Tab tabLokOpt;
@@ -135,7 +139,9 @@ public class Kontroller implements Initializable{
                 populacja.krzyzowanie(liczebnoscPopulacji);
                 populacja.mutuj(szansaMutacji);
                 //Lokalna optymalizacja
-                populacja.lokalnaOptymalizacja();
+                if (AGhybrydowy.isSelected()) {
+                    populacja.lokalnaOptymalizacja();
+                }
                 //Ocena jakości
                 populacja.sortujPopulacje();
                 //Selekcja
@@ -160,6 +166,7 @@ public class Kontroller implements Initializable{
                     pokazNajlepszyWynik(wskaznikIteracji);
                 }
             wskaznikIteracji = 0;
+            aktualizujCzas(start);
         } catch (NumberFormatException e) {
             alertZlyFormat();
         }
